@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --navforeground:#7487c2;
+    --band1-background: #222222;
+    --band2-background: #e9e9e9;
+  }
 
 @theme inline {
   --color-background: var(--background);
@@ -16,11 +19,75 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --navforeground:white;
+    --band1-background: #e9e9e9;
+    --band2-background: #222222;
+
   }
 }
+/* Support class-based dark mode: when `html` has the `dark` class,
+   override the same CSS variables so a JS toggle (html.classList.add/remove)
+   immediately changes the theme. */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --navforeground: white;
+  --band1-background: #e9e9e9;
+  --band2-background: #222222;
+}
+html.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --navforeground:#7487c2;
+  --band1-background: #222222;
+  --band2-background: #e9e9e9;
+}
+.mainul{
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 
+}
+.navlinks{
+  color: #7487c2;
+  border: 0;
+  font-weight: 900;
+  transition: all 0.2s ease-in;
+}
+.navlinks:hover{
+  color: #7e529a;
+  border-bottom: solid 1px #7e529a;
+}
+.active{
+  color: var(--foreground);
+  border: 0;
+  font-weight: 900;
+  border-bottom: solid 1px var(--foreground);
+}
+
+.band1Container {
+  width: 200vw;
+  position: absolute;
+  transform:translateX(-10vw) rotate(45deg);
+
+}
+.band2Container {
+  width: 100vw;
+}
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+@media screen and (max-width:768) {
+.band1Container {
+  transform:translateX(-40vw) translateY(0vh) rotate(15deg);
+}
+.band2Container {
+  width: 100vw;
+}
+.mainul{
+  flex-direction: column;
+  padding: 1rem 0;
+}
 }

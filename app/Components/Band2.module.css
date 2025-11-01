@@ -1,0 +1,58 @@
+.ulband2 {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  background-color: var(--band2-background);
+  padding: 10px 0;
+  margin: 0;
+}
+.ulband2cnt{
+  margin: 0 15px;
+  font-weight: 900;
+  color: var(--foreground);
+}
+.ulband2cnt:hover{
+  color: #8474db;
+  border-bottom: solid 1px #8474db;
+  transition: all 0.2s ease-in;
+}
+/* === Responsive Layout Fix === */
+
+/* Base: full width for large screens */
+.band1Container,
+.band2Container {
+  width: 100vw;
+  overflow-x: visible;
+}
+
+/* On smaller screens, hide overflow */
+@media (max-width: 768px) {
+  .band1Container,
+  .band2Container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .ulband2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 100%;
+}
+
+
+  .ulband2,
+  .ulband1 {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ulband2cnt,
+  .ulband1cnt {
+    display: inline-block;
+    margin: 8px 10px;
+    font-size: 0.9rem;
+  }
+}

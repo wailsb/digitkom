@@ -1,0 +1,13 @@
+.ulband1 {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  background-color: var(--band1-background);
+  padding: 10px 0;
+  margin: 0;
+}
+.ulbandcnt{
+  margin: 0 15px;
+  font-weight: 900;
+  color: var(--background);
+}

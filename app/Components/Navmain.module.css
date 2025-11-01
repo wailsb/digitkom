@@ -1,0 +1,34 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.menu li{
+    color: var(--foreground);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+.menu li:hover{
+    color: #7e529a;
+    border-bottom: solid 1px #7e529a;
+    transition: all 0.2s ease-in;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img:hover{
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
