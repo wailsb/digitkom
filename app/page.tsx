@@ -51,13 +51,11 @@ export default function Home() {
     <div ref={pageRootRef} className={styles.pageContainer}>
       <Navmain />
       
+      {size.width && size.width > 768 && (
       <div className="band1Container">
         <Band1 />
       </div>
-
-      <div ref={band2Ref} className="band2Container" style={{ position: "absolute", left: 0, bottom: "0" }}>
-        <Band2 isMoving={false} />
-      </div>
+      )}
 
       <main ref={mainRef} className={styles.main}>
         <div className={styles.hero}>
