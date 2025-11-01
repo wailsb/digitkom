@@ -1,0 +1,134 @@
+/* Styles for /about page. Uses CSS variables from globals.css for dark/light support. */
+.page {
+  min-height: 80vh;
+  padding: 3rem 1rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+.hero {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--background);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.heroTitle {
+  font-size: clamp(1.4rem, 3.6vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--foreground);
+}
+.heroSubtitle {
+  margin-top: 0.6rem;
+  color: var(--foreground);
+  opacity: 0.78;
+  line-height: 1.6;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+.sectionTitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+.sectionText {
+  color: var(--foreground);
+  opacity: 0.8;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.valuesList {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.valueCard {
+  position: relative;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transform: translateY(0);
+  transition: transform .4s cubic-bezier(.2,.9,.3,1), box-shadow .3s ease;
+}
+.valueCard:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.valueIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+  opacity: 0.8;
+}
+.valueTitle {
+  font-weight: 800;
+  margin-bottom: .5rem;
+  color: var(--foreground);
+}
+.valueText {
+  color: var(--foreground);
+  opacity: 0.75;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* simple reveal animation */
+@keyframes revealUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { animation: revealUp .7s ease both; }
+.reveal.delay-1 { animation-delay: .08s; }
+.reveal.delay-2 { animation-delay: .16s; }
+.reveal.delay-3 { animation-delay: .24s; }
+.reveal.delay-4 { animation-delay: .32s; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 1rem; }
+}
+@media (max-width: 520px) {
+  .hero { padding: .8rem; }
+  .section { padding: 0 1rem; }
+}
+
+.cta {
+  background: var(--navforeground);
+  color: var(--background);
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .18s ease, opacity .18s ease;
+  margin-top: 1rem;
+}
+.cta:hover { 
+  transform: translateY(-2px); 
+  opacity: 0.9;
+}
+
+.footer { 
+  max-width:1100px; 
+  margin: 3rem auto 1rem auto; 
+  text-align:center; 
+  color: var(--foreground); 
+  opacity: 0.7;
+  padding: 0 1rem;
+}

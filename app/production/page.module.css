@@ -1,0 +1,116 @@
+/* Styles for /production page. Uses CSS variables from globals.css for dark/light support. */
+.page {
+  min-height: 80vh;
+  padding: 3rem 1rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+.hero {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--background);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.heroTitle {
+  font-size: clamp(1.4rem, 3.6vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--foreground);
+}
+.heroSubtitle {
+  margin-top: 0.6rem;
+  color: var(--foreground);
+  opacity: 0.78;
+}
+.cta {
+  background: var(--navforeground);
+  color: var(--background);
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.cta:hover { 
+  transform: translateY(-2px); 
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+.card {
+  position: relative;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transform: translateY(0);
+  transition: transform .4s cubic-bezier(.2,.9,.3,1), box-shadow .3s ease;
+}
+.card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.cardTitle { font-weight: 800; margin-bottom: .5rem; color: var(--foreground); }
+.cardText { color: var(--foreground); opacity: 0.78; line-height: 1.5; }
+
+.cardHeader { display:flex; gap:12px; align-items:center; margin-bottom: .6rem }
+.cardIcon { width:44px; height:44px; flex:0 0 44px; color: var(--foreground); }
+.cardSubtitle { font-size: .9rem; color: var(--foreground); opacity: 0.72; margin-top:2px }
+
+/* simple reveal animation */
+@keyframes revealUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { animation: revealUp .7s ease both; }
+.reveal.delay-1 { animation-delay: .08s; }
+.reveal.delay-2 { animation-delay: .16s; }
+.reveal.delay-3 { animation-delay: .24s; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 1rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); padding: 0 1rem; }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; padding: 0 1rem; gap: .75rem; }
+  .hero { padding: .8rem; }
+}
+
+.featureList { max-width: 1100px; margin: 1rem auto 3rem auto; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center }
+.feature { 
+  position: relative;
+  padding: .7rem 1.2rem; 
+  border-radius:999px; 
+  background: var(--background); 
+  color: var(--foreground); 
+  font-weight:700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feature:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.footer { 
+  max-width:1100px; 
+  margin: 3rem auto 1rem auto; 
+  text-align:center; 
+  color: var(--foreground); 
+  opacity: 0.7;
+}

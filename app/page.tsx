@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={pageRootRef} className="relative overflow-hidden h-full">
+    <div ref={pageRootRef} className="relative overflow-hidden min-h-full h-fit">
       <Navmain />
       <div className="band1Container">
         <Band1 />
@@ -60,7 +60,7 @@ export default function Home() {
         <Band2 isMoving={false} />
       </div>
 
-      <main ref={mainRef} className="flex flex-col justify-center h-full items-center bg-background text-foreground">
+      <main ref={mainRef} className="flex pb-[100px] flex-col justify-center h-full items-center bg-background text-foreground">
         <div className="grow"/>
         <div className="flex flex-col justify-center items-center">
           {size.width <= 768 ? (
@@ -70,6 +70,7 @@ export default function Home() {
                 <br />
                 <span className="text-gray-700">Design.</span>
                 Production.
+
                 <br />
                 <span className="text-orange-500">Marketing</span>
                 <br />

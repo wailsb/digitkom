@@ -1,0 +1,86 @@
+/* Styles for /gestion page. Uses CSS variables from globals.css for dark/light support. */
+.page {
+  min-height: 80vh;
+  padding: 3rem 1rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent 40%);
+  color: var(--foreground);
+}
+.hero {
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(126,82,154,0.06), rgba(116,135,194,0.03));
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+.heroTitle {
+  font-size: clamp(1.4rem, 3.6vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--foreground);
+}
+.heroSubtitle {
+  margin-top: 0.6rem;
+  color: var(--foreground);
+  opacity: 0.78;
+}
+.cta {
+  background: linear-gradient(90deg,#7e529a,#ff7a59);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.cta:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+.card {
+  background: var(--band1-background, #f3f3f3);
+  color: var(--foreground);
+  padding: 1.4rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transform: translateY(0);
+  transition: transform .4s cubic-bezier(.2,.9,.3,1), box-shadow .3s;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+.cardTitle { font-weight: 800; margin-bottom: .5rem; color: var(--foreground); }
+.cardText { color: var(--foreground); opacity: 0.78; }
+
+.cardHeader { display:flex; gap:12px; align-items:center; margin-bottom: .6rem }
+.cardIcon { width:44px; height:44px; flex:0 0 44px; color: var(--foreground); }
+.cardSubtitle { font-size: .9rem; color: var(--foreground); opacity: 0.72; margin-top:2px }
+
+/* simple reveal animation */
+@keyframes revealUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { animation: revealUp .7s ease both; }
+.reveal.delay-1 { animation-delay: .08s; }
+.reveal.delay-2 { animation-delay: .16s; }
+.reveal.delay-3 { animation-delay: .24s; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 1rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); padding: 0 1rem; }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; padding: 0 1rem; gap: .75rem; }
+  .hero { padding: .8rem; }
+}
+
+.featureList { max-width: 1100px; margin: 1rem auto 3rem auto; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center }
+.feature { padding: .6rem 1rem; border-radius:999px; background: transparent; border: 1px solid rgba(0,0,0,0.06); color: var(--foreground); font-weight:700 }
+
+.footer { max-width:1100px; margin: 3rem auto 1rem auto; text-align:center; color: color-mix(in srgb,var(--foreground) 60%, transparent); }
