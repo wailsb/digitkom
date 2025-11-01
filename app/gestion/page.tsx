@@ -1,7 +1,17 @@
-
+import { Metadata } from "next";
 import EmailForm from "../Components/EmailForm";
 import Navbar from "../Components/Navbar";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Gestion Numérique - CRM, Automatisation & Reporting",
+  description: "Solutions de gestion numériques pour entreprises : CRM, automatisation des tâches, tableaux de bord et indicateurs de performance. Structurez vos flux et gagnez en efficacité.",
+  keywords: ["gestion numérique", "CRM", "automatisation", "reporting", "KPI", "tableaux de bord", "gestion clients"],
+  openGraph: {
+    title: "Gestion Numérique - Solutions de gestion pour entreprises",
+    description: "CRM, automatisation et reporting pour optimiser votre gestion d'entreprise.",
+  },
+};
 
 export default function GestionPage() {
     return (

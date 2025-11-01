@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import Navbar from "../Components/Navbar";
 import EmailForm from "../Components/EmailForm";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "À propos de DigitKom - Agence Digitale",
+  description: "Découvrez DigitKom, votre partenaire digital. Agence spécialisée en développement web, identité visuelle, production audiovisuelle et gestion numérique. Excellence, innovation et proximité.",
+  keywords: ["agence digitale", "à propos", "DigitKom", "équipe digitale", "valeurs entreprise", "agence web", "expertise digitale"],
+  openGraph: {
+    title: "À propos de DigitKom",
+    description: "Agence digitale spécialisée : développement, design, production. Excellence et innovation au service de vos projets.",
+  },
+};
 
 export default function AboutPage() {
     return (

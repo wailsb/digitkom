@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import Navbar from "../Components/Navbar";
 import EmailForm from "../Components/EmailForm";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Production Visuelle - Vidéo, Photo & Motion Design",
+  description: "Services de production audiovisuelle professionnelle : vidéos corporate, photographie d'entreprise, motion design. Mettez en valeur votre entreprise avec du contenu visuel de qualité.",
+  keywords: ["production vidéo", "vidéo corporate", "photographie professionnelle", "motion design", "contenu audiovisuel", "vidéo d'entreprise"],
+  openGraph: {
+    title: "Production Visuelle - Vidéo & Photo Professionnelle",
+    description: "Productions audiovisuelles de qualité pour valoriser votre entreprise et vos projets.",
+  },
+};
 
 export default function ProductionPage() {
     return (

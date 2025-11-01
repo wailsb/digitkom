@@ -1,16 +1,15 @@
 "use client";
-import Navbar from "./Components/Navbar";
-import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
-import Animated from "./Components/Animated";
+import Link from "next/link";
 import Band1 from "./Components/Band1";
 import Navmain from "./Components/Navmain";
 import Band2 from "./Components/Band2";
+import styles from "./page.module.css";
 
 export default function Home() {
   const [size, setSize] = useState({ width: 0, height: 0 });
+  const [mounted, setMounted] = useState(false);
 
-  // refs to measure and position band2
   const pageRootRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLElement | null>(null);
   const band2Ref = useRef<HTMLDivElement | null>(null);
@@ -25,7 +24,7 @@ export default function Home() {
       };
     }
 
-    // theme handling (preserve your existing logic)
+    // theme handling
     const storedTheme = localStorage.getItem("theme");
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = storedTheme || (systemDark ? "dark" : "light");
@@ -36,12 +35,12 @@ export default function Home() {
 
     // set initial size
     setSize(screenSize());
+    setMounted(true);
 
     const handleResize = () => {
       setSize(screenSize());
     };
     window.addEventListener("resize", handleResize);
-
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -49,54 +48,111 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={pageRootRef} className="relative overflow-hidden min-h-full h-fit">
+    <div ref={pageRootRef} className={styles.pageContainer}>
       <Navmain />
+      
       <div className="band1Container">
         <Band1 />
       </div>
 
-      {/* band2 positioned via JS so it always sits under main's bottom */}
-      <div ref={band2Ref} className="band2Container" style={{ position: "absolute", left: 0 ,bottom: "0"}}>
+      <div ref={band2Ref} className="band2Container" style={{ position: "absolute", left: 0, bottom: "0" }}>
         <Band2 isMoving={false} />
       </div>
 
-      <main ref={mainRef} className="flex pb-[100px] flex-col justify-center h-full items-center bg-background text-foreground">
-        <div className="grow"/>
-        <div className="flex flex-col justify-center items-center">
-          {size.width <= 768 ? (
-            <>
-              <span className="text-3xl font-black text-wrap my-24 mx-2 p-4 text-center">
-                Brand.
+      <main ref={mainRef} className={styles.main}>
+        <div className={styles.hero}>
+          {/* Hero Title with creative typography */}
+          <div className={styles.heroContent}>
+            {mounted && size.width <= 768 ? (
+              <h1 className={`${styles.heroTitle} ${styles.mobile}`}>
+                <span className={styles.word1}>Marque.</span>
                 <br />
-                <span className="text-gray-700">Design.</span>
-                Production.
+                <span className={styles.word2}>Design.</span>
+                <br />
+                <span className={styles.word3}>Production.</span>
+                <br />
+                <span className={styles.word4}>Marketing.</span>
+                <br />
+                <span className={styles.word5}>Sponsor.</span>
+                <br />
+                <span className={styles.word6}>&lt;Software/&gt;</span>
+                <br />
+                <span className={styles.word7}>Et Plus Encore</span>
+              </h1>
+            ) : (
+              <h1 className={styles.heroTitle}>
+                <span className={styles.word1}>Marque.</span>
+                <span className={styles.word2}>Design.</span>
+                <br />
+                <span className={styles.word3}>Production.</span>
+                <span className={styles.word4}>Marketing.</span>
+                <br />
+                <span className={styles.word5}>Sponsor.</span>
+                <span className={styles.word6}>&lt;Software/&gt;</span>
+                <br />
+                <span className={styles.word7}>Et Plus Encore</span>
+              </h1>
+            )}
 
-                <br />
-                <span className="text-orange-500">Marketing</span>
-                <br />
-                Sponsor<span className="text-gray-500">&lt;/Software&gt;.</span>
-                <br />
-                And More
-              </span>
-            </>
-          ) : (
-            <>
-              <span className="text-3xl font-black text-wrap mx-2 p-4 text-center">
-                Brand.
-                <span className="text-gray-700">Design.</span>
-                <br />
-                Production.
-                <span className="text-orange-500">Marketing</span>
-                <br />
-                Sponsor<span className="text-gray-500">&lt;/Software&gt;.</span>
-                <br />
-                And More
-              </span>
-            </>
-          )}
+            <p className={styles.heroSubtitle}>
+              Votre partenaire digital pour transformer vos idées en réalité
+            </p>
+
+            {/* CTA Buttons */}
+            <div className={styles.ctaButtons}>
+              <Link href="/about" className={styles.primaryBtn}>
+                Découvrir DigitKom
+              </Link>
+              <Link href="/gestion" className={styles.secondaryBtn}>
+                Nos Services
+              </Link>
+            </div>
+          </div>
+
+          {/* Floating decorative elements */}
+          <div className={styles.decorativeCircle1}></div>
+          <div className={styles.decorativeCircle2}></div>
+          <div className={styles.decorativeCircle3}></div>
         </div>
-        <div className="grow-2"/>
 
+        {/* Services Quick Links */}
+        <section className={styles.servicesGrid}>
+          <Link href="/identity" className={`${styles.serviceCard} ${styles.delay1}`}>
+            <div className={styles.serviceIcon}>🎨</div>
+            <h3>Identité Visuelle</h3>
+            <p>Créez une marque forte et mémorable</p>
+          </Link>
+
+          <Link href="/sas" className={`${styles.serviceCard} ${styles.delay2}`}>
+            <div className={styles.serviceIcon}>💻</div>
+            <h3>Solutions Software</h3>
+            <p>Applications sur mesure et performantes</p>
+          </Link>
+
+          <Link href="/production" className={`${styles.serviceCard} ${styles.delay3}`}>
+            <div className={styles.serviceIcon}>🎬</div>
+            <h3>Production</h3>
+            <p>Contenu audiovisuel de qualité</p>
+          </Link>
+
+          <Link href="/gestion" className={`${styles.serviceCard} ${styles.delay1}`}>
+            <div className={styles.serviceIcon}>📱</div>
+            <h3>Gestion Digitale</h3>
+            <p>Automatisation et optimisation</p>
+          </Link>
+
+          <Link href="/sponsor" className={`${styles.serviceCard} ${styles.delay2}`}>
+            <div className={styles.serviceIcon}>🤝</div>
+            <h3>Sponsoring</h3>
+            <p>Partenariats stratégiques</p>
+          </Link>
+
+          <Link href="/about" className={`${styles.serviceCard} ${styles.delay3}`}>
+            <div className={styles.serviceIcon}>✨</div>
+            <h3>À Propos</h3>
+            <p>Découvrez notre équipe</p>
+          </Link>
+        </section>
       </main>
     </div>
   );

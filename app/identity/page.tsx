@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import Navbar from "../Components/Navbar";
 import EmailForm from "../Components/EmailForm";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Identité Visuelle - Création Logo & Charte Graphique",
+  description: "Création d'identité visuelle complète : logo professionnel, charte graphique, supports de communication. Démarquez-vous avec une image de marque forte et cohérente.",
+  keywords: ["identité visuelle", "création logo", "charte graphique", "branding", "design graphique", "supports communication", "carte de visite"],
+  openGraph: {
+    title: "Identité Visuelle - Logo & Charte Graphique",
+    description: "Créez une marque forte et mémorable avec notre expertise en design et branding.",
+  },
+};
 
 export default function IdentityPage() {
   return (

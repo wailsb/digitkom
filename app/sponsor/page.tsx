@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import Navbar from "../Components/Navbar";
 import EmailForm from "../Components/EmailForm";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Sponsoring & Partenariats - Stratégie de Collaboration",
+  description: "Services de sponsoring et partenariats : montage de dossiers, prospection de sponsors, gestion de partenariats. Développez votre réseau et trouvez les bons partenaires.",
+  keywords: ["sponsoring", "partenariats", "prospection sponsors", "dossier de sponsoring", "collaboration entreprise", "recherche de sponsors"],
+  openGraph: {
+    title: "Sponsoring & Partenariats Stratégiques",
+    description: "Expertise en montage de dossiers de sponsoring et développement de partenariats durables.",
+  },
+};
 
 export default function SponsorPage() {
     return (

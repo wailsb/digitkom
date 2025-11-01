@@ -34,9 +34,10 @@ export default function Band1() {
     return (
         <ul className={styles.ulband1}>
             <div className={styles.ulband1} id="band1cnt">
-                <li className={styles.ulbandcnt}>🚀 Livraison rapide et fiable</li>
-                <li className={styles.ulbandcnt}>💼 Solutions personnalisées pour votre entreprise</li>
-                <li className={styles.ulbandcnt}>🌐 Support client</li>
+                <li className={styles.ulbandcnt}>🚀 Solutions rapides et fiables</li>
+                <li className={styles.ulbandcnt}>💼 Services personnalisés pour votre entreprise</li>
+                <li className={styles.ulbandcnt}>🌐 Support client dédié</li>
+                <li className={styles.ulbandcnt}>✨ Innovation & Excellence</li>
             </div>
         </ul>
     );

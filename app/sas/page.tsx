@@ -1,7 +1,17 @@
-
+import { Metadata } from "next";
 import Navbar from "../Components/Navbar";
 import EmailForm from "../Components/EmailForm";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Software as a Service (SaaS) - Développement sur mesure",
+  description: "Développement de solutions logicielles sur mesure : applications web, API, tableaux de bord et outils d'automatisation. Technologies modernes et architecture scalable.",
+  keywords: ["SaaS", "développement web", "application web", "API", "React", "Node.js", "Next.js", "dashboard", "automatisation"],
+  openGraph: {
+    title: "Software as a Service - Développement logiciel sur mesure",
+    description: "Applications web, API et dashboards développés avec les technologies les plus modernes.",
+  },
+};
 
 export default function SasPage() {
     return (
