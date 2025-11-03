@@ -91,7 +91,7 @@ export default function Home() {
                 <span className={styles.word7}>Et Plus Encore</span>
               </h1>
             )*/}
-            <video autoPlay loop muted playsInline className={"w-full "+styles.heroVideo}>
+            <video autoPlay loop muted playsInline className="w-full ">
               <source src="/main.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
