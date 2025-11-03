@@ -24,11 +24,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0rem 0rem;
+  padding: 0rem;
   position: relative;
   min-height: 70vh;
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
 }
 
