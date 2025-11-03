@@ -6,7 +6,6 @@
   color: var(--foreground);
 }
 .hero {
-  max-width: 1100px;
   margin: 0 auto 2rem auto;
   padding: 2rem;
   border-radius: 12px;
@@ -76,7 +75,7 @@
   .grid { grid-template-columns: repeat(2, 1fr); padding: 0 1rem; }
 }
 @media (max-width: 520px) {
-  .grid { grid-template-columns: 1fr; padding: 0 1rem; gap: .75rem; }
+  .grid { grid-template-columns: 1fr; padding: 0; gap: .75rem; }
   .hero { padding: .8rem; }
 }
 
