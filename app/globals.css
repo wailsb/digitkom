@@ -6,6 +6,7 @@
     --navforeground:#7487c2;
     --band1-background: #222222;
     --band2-background: #e9e9e9;
+    --mainnavGradient: linear-gradient(to right,#67629f59,#9570a65d);
   }
 
 @theme inline {
@@ -22,6 +23,8 @@
     --navforeground:white;
     --band1-background: #e9e9e9;
     --band2-background: #222222;
+    --mainnavGradient: linear-gradient(to right,#32305059,#533e5e7e);
+
 
   }
 }
@@ -34,6 +37,7 @@ html.dark {
   --navforeground: white;
   --band1-background: #e9e9e9;
   --band2-background: #222222;
+  --mainnavGradient: linear-gradient(to right,#32305059,#533e5e7e);
 }
 html.light {
   --background: #ffffff;
@@ -41,6 +45,7 @@ html.light {
   --navforeground:#7487c2;
   --band1-background: #222222;
   --band2-background: #e9e9e9;
+  --mainnavGradient: linear-gradient(to right,#67629f59,#9570a65d);
 }
 .mainul{
   display: flex;

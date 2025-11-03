@@ -11,7 +11,7 @@
     left: 0;
     backdrop-filter: blur(10px);
     height: 70px;
-    background-image: linear-gradient(to right,#67629f59,#9570a6);
+    background-image: var(--mainnavGradient);
 }
 .menu{
     display: flex;
