@@ -51,17 +51,17 @@ export default function Home() {
     <div ref={pageRootRef} className={styles.pageContainer}>
       <Navmain />
       
-      {size.width && size.width > 768 && (
+      {/*size.width && size.width > 768 && (
       <div className="band1Container">
         <Band1 />
       </div>
-      )}
+      )*/}
 
       <main ref={mainRef} className={styles.main}>
         <div className={styles.hero}>
           {/* Hero Title with creative typography */}
           <div className={styles.heroContent}>
-            {mounted && size.width <= 768 ? (
+            {/*mounted && size.width <= 768 ? (
               <h1 className={`${styles.heroTitle} ${styles.mobile}`}>
                 <span className={styles.word1}>Marque.</span>
                 <br />
@@ -90,8 +90,11 @@ export default function Home() {
                 <br />
                 <span className={styles.word7}>Et Plus Encore</span>
               </h1>
-            )}
-
+            )*/}
+            <video autoPlay loop muted playsInline className={"w-full "+styles.heroVideo}>
+              <source src="/main.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <p className={styles.heroSubtitle}>
               Votre partenaire digital pour transformer vos idées en réalité
             </p>
