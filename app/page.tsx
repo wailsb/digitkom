@@ -95,9 +95,6 @@ export default function Home() {
               <source src="/main.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <p className={styles.heroSubtitle}>
-              Votre partenaire digital pour transformer vos idées en réalité
-            </p>
 
             {/* CTA Buttons */}
             <div className={styles.ctaButtons}>
