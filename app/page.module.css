@@ -345,6 +345,8 @@
     flex-direction: column;
     width: 100%;
     max-width: 300px;
+    margin-left: auto;
+    max-width: auto;
   }
 
   .primaryBtn,
